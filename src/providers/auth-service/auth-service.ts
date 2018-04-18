@@ -13,7 +13,7 @@ export class User {
 }
 
 @Injectable()
-export class AuthService {
+export class AuthServiceProvider {
   currentUser: User;
 
   public login(credentials) {
@@ -22,8 +22,9 @@ export class AuthService {
     } else {
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
+        //TODO: Connect to Database to Check true login
         let access = (credentials.password === "pass" && credentials.email === "email");
-        this.currentUser = new User('Simon', 'saimon@devdactic.com');
+        this.currentUser = new User('Emma', 'emma@test.com');
         observer.next(access);
         observer.complete();
       });

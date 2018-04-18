@@ -1,4 +1,4 @@
-import { AuthService } from './../providers/auth-service/auth-service';
+import { AuthServiceProvider } from './../providers/auth-service/auth-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -23,7 +23,7 @@ import { MyApp } from './app.component';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    AuthServiceProvider
   ]
 })
 export class AppModule {}
